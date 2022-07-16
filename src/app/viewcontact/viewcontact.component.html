@@ -1,0 +1,84 @@
+<div class="container mt-4">
+  <div class="row align-item-center">
+    <div class="col">
+      <p class="h5 fw-bold text-primary">
+        <mat-icon>visibility</mat-icon>&nbsp;View Contact
+      </p>
+      <p class="fst-italic mt-3">
+        Contact management is essential for keeping digital records of customer
+        data. Contact management is the process of storing and tracking data on
+        customers and leads. In addition to providing quick access to customer
+        data, investing in contact management can help you grow and diversify
+        your customer base. Contact management is essential for keeping digital
+        records of customer data. Contact management is the process of storing
+        and tracking data on customers and leads. In addition to providing quick
+        access to customer data, investing in contact management can help you
+        grow and diversify your customer base.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- condition based loading -->
+<div *ngIf="loading">
+  <div class="container spinner-img">
+    <div class="row">
+      <div class="col">
+        <app-spinner></app-spinner>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- display error message -->
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="h4 text-danger fw-bold">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- view contact details -->
+<div *ngIf="userDetails$ | async as userDetails" class="container">
+  <div class="row mt-4">
+    <div class="col-sm-3">
+      <img
+        [src]="userDetails.photo"
+        alt="user"
+        class="contact-img-details"
+      />
+    </div>
+    <div class="col-sm-6">
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-warning">
+          Name:&nbsp;<span class="fw-bold">{{userDetails.userName}}</span>
+        </li>
+        <li class="list-group-item list-group-item-warning">
+          Email:&nbsp;<span class="fw-bold">{{userDetails.email}}</span>
+        </li>
+        <li class="list-group-item list-group-item-warning">
+          Mobile:&nbsp;<span class="fw-bold">{{userDetails.mobile}}</span>
+        </li>
+        <li class="list-group-item list-group-item-warning">
+          Company:&nbsp;<span class="fw-bold">{{userDetails.company}}</span>
+        </li>
+        <li class="list-group-item list-group-item-warning">
+          Title:&nbsp;<span class="fw-bold">{{userDetails.title}}</span>
+        </li>
+        <li class="list-group-item list-group-item-warning">
+          Group Name:&nbsp;<span class="fw-bold">{{userDetails.name}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- <pre>{{ group | json }}</pre> -->
+  <div class="row mt-2">
+    <div class="col">
+      <a routerLink="/" class="btn btn-warning"
+        ><mat-icon>arrow_circle_left</mat-icon>&nbsp;Go Back</a
+      >
+    </div>
+  </div>
+</div>

@@ -1,0 +1,124 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <p class="h5">
+        Contact Management Application
+        <a class="btn btn-success btn-sm" href="contacts/add"
+          ><mat-icon>add_circle</mat-icon>&nbsp;Add New</a
+        >
+      </p>
+      <p class="fst-italic mt-2">
+        Contact management is essential for keeping digital records of customer
+        data. Contact management is the process of storing and tracking data on
+        customers and leads. In addition to providing quick access to customer
+        data, investing in contact management can help you grow and diversify
+        your customer base. Contact management is essential for keeping digital
+        records of customer data. Contact management is the process of storing
+        and tracking data on customers and leads. In addition to providing quick
+        access to customer data, investing in contact management can help you
+        grow and diversify your customer base.
+      </p>
+      <form [formGroup]="searchForm">
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              name="search"
+              formControlName="searchInput"
+              placeholder="Search Contact"
+            />
+          </div>
+          <div class="col-md-6">
+            <input  type="submit" class="btn btn-outline-dark" (click)="searchItem()" value="Search"/>
+
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- condition based loading -->
+    <div *ngIf="loading">
+      <div class="container spinner-img">
+        <div class="row">
+          <div class="col">
+            <app-spinner></app-spinner>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- display error message -->
+    <div *ngIf="!loading && errorMessage">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="h4 text-danger fw-bold">{{ errorMessage }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <pre>{{contacts | json}}</pre> -->
+    <!-- card for contact details -->
+    <div class="container mt-5" *ngIf="!loading && contacts.length > 0">
+      <div class="row">
+        <div class="col-md-6" *ngFor="let contact of contacts" class="col-md-6">
+          <div class="card list-group-item-success shadow-lg my-2">
+            <div class="card-body">
+              <div class="row align-item-center">
+                <img [src]="contact.photo" alt="user" class="contact-img" />
+
+                <div
+                  class="col-sm-7 mt-3 align-item-center justify-content-center"
+                >
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      Name:&nbsp;<span class="fw-bold">{{ contact.name }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      Email:&nbsp;<span class="fw-bold">{{
+                        contact.email
+                      }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      Mobile:&nbsp;<span class="fw-bold">{{
+                        contact.mobile
+                      }}</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- <div
+                  class="col-sm-1 d-flex-absolute flex-wrap:flex-wrap flex-column justify-content-center align-items-center"
+                >
+                 -->
+                <div
+                  class="col-sm-1 d-flex align-items-center flex-column justify-content-center"
+                >
+                <!-- <div class="d-flex align-items-center flex-column"> -->
+                  <a
+                    routerLink="/contacts/view/{{ contact.id }}"
+                    class="btn btn-warning"
+                    ><mat-icon>visibility</mat-icon></a
+                  >
+                  <a
+                    routerLink="/contacts/edit/{{ contact.id }}"
+                    class="btn btn-success"
+                    ><mat-icon>edit</mat-icon></a
+                  >
+                  <button
+                    class="btn btn-danger"
+                    (click)="deleteContact(contact.id)"
+                  >
+                    <i class="my-1"><mat-icon>delete</mat-icon></i>
+                  </button>
+                <!-- </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

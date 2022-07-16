@@ -1,0 +1,66 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "Jyothika",
+      "company": "oracle",
+      "email": "jyothika@gmail.com",
+      "title": "developer",
+      "mobile": 860639151,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToY58iNK-O5swDIXfPCenWrWREVpGSYvBBDQ&usqp=CAU",
+      "groupId": "2"
+    },
+    {
+      "id": "2",
+      "name": "Seena",
+      "company": "wipro",
+      "email": "seena@gmail.com",
+      "title": "Network Admin",
+      "mobile": 9745599958,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8FuEJbKwDdaz1h387130xmYkAIQbZpahhbQ&usqp=CAU",
+      "groupId": "1"
+    },
+    {
+      "id": "4",
+      "name": "jhan zen",
+      "company": "Asianet TV",
+      "email": "jhan@gmail.com",
+      "title": "Director",
+      "mobile": "5964421444",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo8eAAlNI5l9m4zATOTvt6h8kWbHzZH5fM6g&usqp=CAU",
+      "groupId": "4"
+    },
+    {
+      "name": "Manu",
+      "photo": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80",
+      "email": "manu@gmail.com",
+      "mobile": 6655655655,
+      "company": "Google",
+      "groupId": "1",
+      "id": "q6ctP1x",
+      "title": "developer"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Collegue"
+    },
+    {
+      "id": "2",
+      "name": "Family"
+    },
+    {
+      "id": "3",
+      "name": "Friends"
+    },
+    {
+      "id": "4",
+      "name": "Service"
+    },
+    {
+      "id": "5",
+      "name": "Social"
+    }
+  ]
+}
