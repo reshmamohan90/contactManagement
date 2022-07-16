@@ -28,7 +28,6 @@ export class ContactManagerComponent implements OnInit {
     this.loading = true;
     this.contService.getAllContacts().subscribe(
       (data: MyContact[]) => {
-        // this.contacts = data;
         this.loading = false;
         this.filterSearchData(data);
       },
@@ -40,11 +39,8 @@ export class ContactManagerComponent implements OnInit {
   }
 
   searchItem() {
+    console.log('hello');
     this.getAllContactData();
-    // .subscribe(
-    //   (data : MyContact[] | any)=> {
-    //   this.searchInput = data;
-    // });
   }
 
   filterSearchData(data: MyContact[]) {
